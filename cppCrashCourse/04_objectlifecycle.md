@@ -65,9 +65,8 @@ private:
 static Tracer t1{"t1_static"};
 static thread_local Tracer t2{"t2_thread_local"};
 
-
 int main (){
-    static thread_local Tracer t2a{"t2a_thread_local"};
+    t2;  // needs to be used, https://github.com/JLospinoso/ccc/issues/44
     std::cout << "A" << std::endl;
     Tracer t3{"t3_automatic"};
     std::cout << "B" << std::endl;
@@ -78,16 +77,15 @@ int main (){
 }
 
 // Output
-// FIXME t2 is supposed to be executed, https://github.com/JLospinoso/ccc/issues/44
 // t1_static constructed
-// t2a_thread_local constructed
+// t2_thread_local constructed
 // A
 // t3_automatic constructed
 // B
 // t4_dynamic constructed
 // C
 // t3_automatic destructed
-// t2a_thread_local destructed
+// t2_thread_local destructed
 // t1_static destructed
 ```
 
