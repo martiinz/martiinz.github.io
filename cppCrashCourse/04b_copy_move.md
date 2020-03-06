@@ -12,7 +12,7 @@ For fundamental and structs (POD) the story is straight forward, just pass by va
 
 copying can cost a lost, make sure you really need a copy and prefer passing a const reference.
 
-For fully featured classes (with buffers) it gets more tough. It's a member wise copy by default, which can be dangerous.![](/home/tin/tech_knowledge/martiinz.github.io/cppCrashCourse/pic/04a_copy.png)
+For fully featured classes (with buffers) it gets more tough. It's a member wise copy by default, which can be dangerous.![](./pic/04a_copy.png)
 
 If you destruct a an a_copy --> Bang! Double Free! undefined behavior. 
 
@@ -131,4 +131,4 @@ The Rule of five = five Methods are to specify. Either default/delete or impleme
 
 If you provide nothing the compiler will generate all of them *rule of zero* 
 
-![](/home/tin/tech_knowledge/martiinz.github.io/cppCrashCourse/pic/04b_contructor.svg)
+![](./pic/04b_contructor.svg)
