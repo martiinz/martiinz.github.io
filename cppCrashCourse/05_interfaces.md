@@ -2,9 +2,9 @@
 
 Or Runtime Polymorphism
 
-*Interface* is a shared boundary that contains no data/code
-*Implementation* is code or Data that declares support for an Interface
-Interfaces promote highly reusable and loosely coupled code
+*Interface* is a shared boundary that contains no data/code  
+*Implementation* is code or Data that declares support for an Interface  
+Interfaces promote highly reusable and loosely coupled code  
 
 Let's see an example where class Bank is *consumer* of the interface Console logger.
 
@@ -32,17 +32,17 @@ struct FileLogger : Logger {
 
 
 
-In cpp interfaces are done with inheritance, there is no interface keyword
-The *virtual* keyword permits the derived class to override a base class Method
-Use *override* keyword in the implementation to tell the compiler you indented to overwrite. (good practice)
-If you want to *require* the derived class to implement the method, append the suffix = 0
+In cpp interfaces are done with inheritance, there is no interface keyword  
+The *virtual* keyword permits the derived class to override a base class Method  
+Use *override* keyword in the implementation to tell the compiler you indented to overwrite. (good practice)  
+If you want to *require* the derived class to implement the method, append the suffix = 0  
 Add a virtual destructor to Interface, in rare circumstances it's possible to leak resources otherwise ( see listing 5.9)
 
 ## Using Interfaces (144)
 
-- *Constructor injection*, use constructor to set reference (cannot be reseated)
+- *Constructor injection*, use constructor to set reference (cannot be reseated)  
 -> use that if implementation stays the same for lifetime of object
-- *Property  injection*, use a method to set a pointer member, can be changed at anytime
+- *Property  injection*, use a method to set a pointer member, can be changed at anytime  
 -> use that if you need to cache implementation 
 - You can combine these to methods
 
