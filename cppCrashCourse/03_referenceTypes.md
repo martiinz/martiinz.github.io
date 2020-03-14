@@ -108,9 +108,9 @@ When initializing a variable with auto , compiler determines type from context (
 auto Keyword helps code making simper and resilient to refactoring
 
 ```cpp
-auto num{42};  	// int
+auto num{42};   // int
 auto lnum{42L}; // long
-auto foo{0.3}; 	// double
+auto foo{0.3};  // double
 auto bar{0.3F}; // float
 
 // works with references, pointers and const

@@ -25,11 +25,11 @@ Make a deep copy of SimpleString with custom copy constructor
 SimpleString(const SimpleString& other);
 
 // body
-SimpleString(const SimpleString& other)		// const, you must not modify original
-    : max_size{ other.max_size }, 			// just copy fundamentals
-	  length{ other.length },				
-	  buffer{ new char[max_size]} {			// alocate new buffer
-	  std::strncopy(buffer, other.buffer, max_size);	// deepcopy buffer
+SimpleString(const SimpleString& other)                // const, you must not modify original
+    : max_size{ other.max_size },                      // just copy fundamentals
+    length{ other.length },
+    buffer{ new char[max_size]} {                      // alocate new buffer
+    std::strncopy(buffer, other.buffer, max_size);     // deepcopy buffer
 }
 ```
 
@@ -39,13 +39,13 @@ Make a deep copy of SimpleString with custom copy assigment.
 
 ```cpp
 SimpleString& operator=(const SimpleString& other) {
-	if (this == &other) return *this;					// check if other refers to this
-	const auto new_buffer = new char[other.max_size];	// create new buffer
-	delete[] buffer;									// clean old buffer
-	buffer = new_buffer;								// and assign new
-	length = other.length;								// fundamental cp
-	max_size = other.max_size;
-	trcpy_s(buffer, max_size, other.buffer);			// deepcopy buffer
+    if (this == &other) return *this;                    // check if other refers to this
+    const auto new_buffer = new char[other.max_size];    // create new buffer
+    delete[] buffer;                                     // clean old buffer
+    buffer = new_buffer;                                 // and assign new
+    length = other.length;                               // fundamental cp
+    max_size = other.max_size;
+    trcpy_s(buffer, max_size, other.buffer);             // deepcopy buffer
 return *this;
 }
 ```
@@ -68,13 +68,13 @@ Sometimes a class should not be copied, eg class manages files
 // accept default 
 class Replicant {
     Replicant(const Replicant&) = default;
-	Replicant& operator=(const Replicant&) = default;
+    Replicant& operator=(const Replicant&) = default;
 };
 
 // delete default
 class NoReplicant {
     NoReplicant(const NoReplicant&) = delete;
-	NoReplicant& operator=(const NoReplicant&) = delete;
+    NoReplicant& operator=(const NoReplicant&) = delete;
 };
 }
 ```
@@ -92,27 +92,27 @@ rvalue used &&, cast any object into rvalue with the *std::move()*, see the main
 Use noexcept, since most compilers can not handle exceptions in move an would use copy instead...
 
 ```cpp
-SimpleString(SimpleString&& other) noexcept		// other is rvalue (&&),
-    											// you're allowed to canibalize
+SimpleString(SimpleString&& other) noexcept     // other is rvalue (&&),
+                                                // you're allowed to canibalize
     : max_size{ other.max_size }, 
-	  buffer(other.buffer),
-	  length(other.length) {
-          other.length = 0;						// put in "moved from" state
-          other.buffer = nullptr;				// delocate other has no impact now
-          other.max_size = 0;
-      }
+    buffer(other.buffer),
+    length(other.length) {
+        other.length = 0;                      // put in "moved from" state
+        other.buffer = nullptr;                // delocate other has no impact now
+        other.max_size = 0;
+    }
 ```
 
 ### move assignment
 
 ```cpp
 SimpleString& operator=(SimpleString&& other) noexcept {
-    if ( this == &other ) return *this;			// jokester, selfreference check
-    delete buffer;								// cleanup
-    buffer = other.buffer;						// assign
+    if ( this == &other ) return *this;           // jokester, selfreference check
+    delete buffer;                                // cleanup
+    buffer = other.buffer;                        // assign
     length = other.length;
     max_size = other.max_size;
-    other.buffer = nullptr;						// put in "moved from"
+    other.buffer = nullptr;                       // put in "moved from"
     other.lenght = 0;
     other.max_size = 0;
     return *this;
