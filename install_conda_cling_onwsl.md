@@ -24,7 +24,7 @@ jupyter-lab --no-browser
 ```
 and open http://127.0.0.1:8888
 
-## and maybe some convinience
+## and maybe some convenience
 may add some link and aliases
 ```bash
 ln -s /mnt/c/Users/mas/Documents/ Documents
