@@ -39,9 +39,10 @@ bool setTX4Value(unsigned int index, unsigned int subindex, unsigned int data){
                 // accumulate register
                 pdo->second.val |= data;
             }
+        } else {
+            // normal mode, just set data
+            pdo->second.val = data;
         }
-        // normal mode, just set data
-        pdo->second.val = data;
         return true;
     }
     // value not found
