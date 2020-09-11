@@ -7,8 +7,9 @@ ssh-keygen -t rsa -C "work@example.com" -f ~/.ssh/id_rsa_work
 # add public key to your Github account
 # under Settings -> SSH -> New SHH Key
 
-# register the new key with the ssh agent
-ssh-add ~/.ssh/id_rsa__work
+# register all keys with the ssh agent
+ssh-add ~/.ssh/id_rsa
+ssh-add ~/.ssh/id_rsa_work
 
 # create config file, config as follows
 # replace hostname and keyfile in second account
