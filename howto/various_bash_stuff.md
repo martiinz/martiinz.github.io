@@ -10,6 +10,9 @@ grep -rnw . -e 'search term'
 # create session
 screen -S sessionname
 
+# list sessions
+screen -ls
+
 # reatach session, -d will detach from other location if attached somewhere
 screen -d -R sessionname
 
