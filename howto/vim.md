@@ -7,6 +7,7 @@ vim -p file1 file2 file3
 
 ## some more in editor basics
 ```bash
+## tabs
 :tabnew file    # new
 :tabn           # next  
 :tabp           # previous
@@ -15,6 +16,7 @@ vim -p file1 file2 file3
 :tabs           # list
 :tabn x         # forward x
 
+:r              # reload
 ```
 
 
