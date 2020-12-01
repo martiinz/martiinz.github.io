@@ -29,3 +29,12 @@ git branch -d <BRANCH>
 # remotely
 git push origin --delete <BRANCH>
 ```
+
+## file permission
+```bash
+# show file permission $
+git ls-files --stage
+
+# make file executable
+git update-index --chmod=+x foo.sh
+```
