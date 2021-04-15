@@ -6,6 +6,7 @@ grep -rnw . -e 'search term'
 
 # some screen stuff
 
+## very basics
 ```bash
 # create session
 screen -S sessionname
@@ -23,8 +24,22 @@ ctl+a c
 ctl+a #
 
 # show current shells
-crl+a "
+ctl+a "
 
 # detach session 
 ctl+a d
 ```
+
+## splitting
+```bash
+# Split
+ctl+a S
+
+# focus splits 
+ctl+a tab
+```
+
+
+
+
+
