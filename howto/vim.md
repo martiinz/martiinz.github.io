@@ -3,6 +3,8 @@
 # open multiple files
 vim -p file1 file2 file3
 
+# save as sudo 
+:w !sudo tee %
 ```
 
 ## some more in editor basics
