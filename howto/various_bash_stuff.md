@@ -8,35 +8,21 @@ grep -rnw . -e 'search term'
 
 ## very basics
 ```bash
-# create session
-screen -S sessionname
-
-# list sessions
-screen -ls
-
-# reatach session, -d will detach from other location if attached somewhere
-screen -d -R sessionname
-
-# new shell
-ctl+a c
-
-# switch shell, where # is the session number 
-ctl+a #
-
-# show current shells
-ctl+a "
-
-# detach session 
-ctl+a d
+screen -S name          # create session
+screen -ls              # list sessions
+screen -d -R name       # reatach session, -d will detach from other location if attached somewhere
+ctl+a c                 # new shell
+ctl+a #                 # switch shell, where # is the session number 
+ctl+a "                 # show current shells
+ctl+a d                 # detach session 
 ```
 
 ## splitting
 ```bash
-# Split
-ctl+a S
-
-# focus splits 
-ctl+a tab
+ctl+a S                 # Split horizontally
+ctl+a |                 # Split vertically
+ctl+a X                 # remove current view
+ctl+a tab               # focus splits
 ```
 
 
