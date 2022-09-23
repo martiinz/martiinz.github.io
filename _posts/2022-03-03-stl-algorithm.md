@@ -3,6 +3,7 @@ title: "STL Algorithm"
 excerpt: "some algorithm STL Examples"
 tags:
   - cpp
+  - STL
 categories:
   - cpp
 ---

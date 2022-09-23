@@ -3,6 +3,7 @@ title: "Docker Cheat sheet"
 excerpt: "Very brief Docker Intro and Cheat sheet"
 tags:
   - docker
+  - tools
 categories:
   - tools
 ---

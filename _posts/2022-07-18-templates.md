@@ -1,6 +1,6 @@
 ---
 title: "Templates Example"
-excerpt: "Example as explained in 'Professional C++, Marc Gregoire'"
+excerpt: "Example as elaborated in 'Professional C++, Marc Gregoire'"
 tags:
   - cpp
 categories:
