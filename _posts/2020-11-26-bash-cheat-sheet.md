@@ -12,6 +12,9 @@ categories:
 # find in files
 grep -rne 'pattern'    # recursive,lineno,regex
 rgrep
+
+# stoud and sterr to a file
+application >> my.log 2>&1 &
 ```
 
 ## some screen stuff
