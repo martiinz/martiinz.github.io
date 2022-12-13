@@ -7,7 +7,7 @@ categories:
   - cpp
 ---
 
-Respect your parents
+Respect your parents [Professional C++ Marc Gregoire, Chapter 10]
 
 Objects must be constructed along with their parents and any objects that are contained within them.
 C++ defines the creation order as follows:
