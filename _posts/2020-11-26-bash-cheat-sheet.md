@@ -40,8 +40,3 @@ ctl+a |                 # Split vertically
 ctl+a X                 # remove current view
 ctl+a tab               # focus splits
 ```
-
-
-
-
-

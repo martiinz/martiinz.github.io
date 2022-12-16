@@ -7,9 +7,9 @@ categories:
   - cpp
 ---
 
-# constructors
+## constructors
 
-## basic ctor syntax
+### basic ctor syntax
 
 ```c++
 class myClass
@@ -27,7 +27,7 @@ class myClass
 }
 ```
 
-## initializers list
+### initializers list
 
 ```c++
 DoutState::DoutState(const Config &conf, int par):
@@ -38,7 +38,7 @@ DoutState::DoutState(const Config &conf, int par):
 };
 ```
 
-## some loops
+### some loops
 
 I barely can remember my own name, how should someone remember the loop syntax in bash, cpp, python at the same time.
 

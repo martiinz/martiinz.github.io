@@ -14,7 +14,7 @@ C++ defines the creation order as follows:
 
 1. If the class has a base class, the default constructor of the base class is executed, unless there is a call to a base class constructor in the ctor-initializer, in which case that constructor is called instead of the default constructor.
 
-2. Non-static data members of the class are constructed in the order in which they are declared. 
+2. Non-static data members of the class are constructed in the order in which they are declared.
 
 3. The body of the class’s constructor is executed.
 
