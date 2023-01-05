@@ -8,6 +8,49 @@ categories:
   - cpp
 ---
 
+## call operator/lambda/std::for_each()
+
+Use stateless funtion objects, further reading [fluent cpp](https://www.fluentcpp.com/2017/01/23/stl-function-objects-stateless-is-stressless/)
+
+```c++
+#include <vector>
+#include <algorithm>
+
+// use normal function, increase needs to be hardcoded
+// Thats not the way, use call operator or lambda instead
+void function(double& number)
+{
+    number += 2;
+}
+
+class CallOperator
+{
+public:
+    // "store" increase Value in constuctor
+    explicit CallOperator(double bumpValue) : bumpValue_(bumpValue) {}
+    void operator()(double& number) const
+    {
+        number += bumpValue_;
+    }
+private:
+    double bumpValue_;
+};
+
+std::vector<double> numbers = {1, 2, 3, 4, 5};
+
+int main()
+{
+    std::for_each(numbers.begin(), numbers.end(), function);
+
+    std::for_each(numbers.begin(), numbers.end(), CallOperator(2));
+
+    // or use lambda 
+    double bumpValue = 2;
+    std::for_each(numbers.begin(), numbers.end(),
+              [bumpValue](double& number){number += bumpValue;});
+};
+```
+
 ## std::transform()
 
 Incremental update, update m_logline with non empy fields from vecline
